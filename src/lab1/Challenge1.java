@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;
+    private static final int ZERO = 0;
 
     public static void main(String[] args) {
         Challenge1 app = new Challenge1();
@@ -29,7 +30,9 @@ public class Challenge1 {
     
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length != LAST_NAME_IDX + 1){
+            throw new IllegalArgumentException("must have first and last name seperated by a space");
+            } 
         return nameParts[LAST_NAME_IDX];
-    }
-
+        }
 }
