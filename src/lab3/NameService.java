@@ -18,8 +18,11 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the last name
      */
-    public String extractLastName(String fullName) {
+    public String extractLastName(String fullName) throws MyException{
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length != LAST_NAME_IDX + 1){
+            throw new MyException("must have first and last name seperated by a space");
+            } 
         return nameParts[LAST_NAME_IDX];
     }
     
@@ -30,8 +33,11 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the first name
      */
-    public String extractFirstName(String fullName) {
+    public String extractFirstName(String fullName) throws MyException{
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length != LAST_NAME_IDX + 1){
+            throw new MyException("must have first and last name seperated by a space");
+            } 
         return nameParts[FIRST_NAME_IDX];
     }
 
