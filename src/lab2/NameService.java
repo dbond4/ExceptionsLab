@@ -20,6 +20,9 @@ public class NameService {
      */
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length != LAST_NAME_IDX + 1){
+            throw new IllegalArgumentException("must have first and last name seperated by a space");
+            } 
         return nameParts[LAST_NAME_IDX];
     }
     
@@ -32,6 +35,9 @@ public class NameService {
      */
     public String extractFirstName(String fullName) {
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length != LAST_NAME_IDX + 1){
+            throw new IllegalArgumentException("must have first and last name seperated by a space");
+            } 
         return nameParts[FIRST_NAME_IDX];
     }
 
